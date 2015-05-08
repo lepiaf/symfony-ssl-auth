@@ -1,0 +1,5 @@
+lepiaf_app:
+    resource: "@lepiafAppBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
