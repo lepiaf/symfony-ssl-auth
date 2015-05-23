@@ -4,6 +4,10 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
+        in_memory:
+            memory:
+                users:
+                    lepiaf: { roles: [ 'ROLE_ADMIN' ] }
         user_provider:
             id: lepiaf_app.security.user_provider
 
@@ -19,7 +23,7 @@ security:
         secured_area:
             pattern:    ^/admin
             x509:
-                provider: user_provider
+                provider: in_memory
 
             logout:
                 path:   /logout

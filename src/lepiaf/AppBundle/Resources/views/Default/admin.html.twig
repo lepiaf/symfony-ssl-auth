@@ -1,4 +1,17 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-    Protected area
+<h1>Protected area</h1>
+
+<table>
+<thead>
+<td>Key</td>
+<td>Value</td>
+</thead>
+<tbody>
+{% for server,value  in app.request.server%}
+<tr><td>{{server}}</td><td>{{value}}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+
 {% endblock body %}
